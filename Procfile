@@ -1,1 +1,1 @@
-web: gunicorn mysite.wsgi
+web: python manage.py migrate --run-syncdb && python manage.py collectstatic --no-input && gunicorn mysite.wsgi
